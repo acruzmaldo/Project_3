@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
-#################################################################
- -*- coding: utf-8 -*-       JMJ                               
-                              +
-Andres Cruz Maldonado
-HW 
-Problem 
-###################################################################
-"""
+
+
+""""
+Reset Button
+""""
+
 
 import tkinter as tk
 
@@ -68,7 +65,13 @@ def click():
     mysims.error_proportion()
     
     tk.Label(window, text=f"{mysims.error_rate} is the type 1 error rate.").pack()
+
+def clear():
+    """clears all the labels"""
     
+    entry.delete(0, tk.END)
+    entry2.delete(0, tk.END)
+    entry3.delete(0, tk.END)
 
 
 label = tk.Label(text = "How many simulations would you like to run?")
@@ -78,10 +81,9 @@ entry = tk.Entry(width = 20)
 entry2 = tk.Entry(width = 20)
 entry3 = tk.Entry(width = 20)
 
-# entry2.insert(0, "0.05")
 
 button = tk.Button(text = "Submit", command = click)
-# button2 = tk.Button(text = "Submit", command = click)
+button_r = tk.Button(text = "Reset", command = clear)
 out_label = tk.Label(text="")
 
 
@@ -92,6 +94,7 @@ entry2.pack()
 label3.pack()
 entry3.pack()
 button.pack()
+button_r.pack()
 out_label.pack()
 
 window.mainloop()
